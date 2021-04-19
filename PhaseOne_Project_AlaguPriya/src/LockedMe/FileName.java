@@ -71,7 +71,12 @@ public class FileName {
 		scan.nextLine();
 		System.out.println("Enter name of the file to be deleted");
 		this.filename=scan.nextLine();
+		
+		if (filelist.contains(filename)){
 		filelist.remove(filename);
+		System.out.println("File " + filename + " Deleted Successfully");
+		}else
+			System.out.println("File does not exist");
 		System.out.println(filelist);	
 	}
 	
@@ -121,7 +126,7 @@ public class FileName {
 				manageFileOptions();
 			} else if (action==2){
 				deleteFileName();
-				System.out.println("File Deleted Successfully");
+				//System.out.println("File Deleted Successfully");
 				manageFileOptions();
 			} else if (action==3){
 				searchFileName();
